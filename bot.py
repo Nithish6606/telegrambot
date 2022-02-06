@@ -11,14 +11,14 @@ def extract_arg2(arg2):
     return arg2.split()[2]
 
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start','help'])
 def start(message):
     start = 'To start SMS Bomber type /bomb number msg count' \
             '\nFor example /bomb +911234567890 60'
     bot.send_message(message.chat.id, start)
 
 
-@bot.message_handler(commands=['bomb'])
+@bot.message_handler(commands=['bomb','sms'])
 def bomb(message):
     status = extract_arg(message.text)
     status2 = extract_arg2(message.text)
